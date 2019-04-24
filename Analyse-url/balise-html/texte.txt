@@ -1,0 +1,4 @@
+balise head
+og = facebook
+uniquement body 
+balise p 
