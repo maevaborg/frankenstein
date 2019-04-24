@@ -1,5 +1,6 @@
-from random import choice
+from random import choice, randint
 import string, re
+from time import sleep
 
 def clean_data(file):
     with open (file) as f: 
@@ -71,6 +72,15 @@ def generate_text(text, text2, order, length):
     
     return output
 
-resultat = generate_text("data.txt", "data2.txt", 4, 100)
+def loop():
+    rand_num = randint(100, 1000)
+    resultat = generate_text("data.txt", "data2.txt", 4, rand_num)
+    return resultat
+    
+# déclaration fonction pour enregister
 
-print(resultat)
+if __name__ == "__main__":
+    while True:
+        print(loop(), '\n')
+        # appel fonction enregister
+        sleep(2)
