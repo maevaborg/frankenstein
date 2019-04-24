@@ -1,5 +1,7 @@
+#ce code sert à parser des elements d'une url
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
 
 #importing the libraries
 from bs4 import BeautifulSoup
@@ -11,13 +13,13 @@ def get_data(url):
   result = requests.get(url)
   return(result.content)
 
-#filtrer le contenu 
+#filtrer le contenu
 def parse_html(data, balise):
   resultat_parse = BeautifulSoup(data, 'html.parser')
   balise_html = resultat_parse.find_all(balise)
   return(balise_html)
 
-#sauvegarder le contenu parsé dans un fichier texte 
+#sauvegarder le contenu parsé dans un fichier texte
 def save_text(html):
  # print('save texte', html)
   resultat_balise = open('balise.txt',"w", encoding='utf-8')
